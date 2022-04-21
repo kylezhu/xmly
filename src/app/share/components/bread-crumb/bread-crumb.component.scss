@@ -1,0 +1,19 @@
+.bread-crumb {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  color: #72727b;
+  width: 1080px;
+  xm-bread-crumb-item {  // 标签选择器
+    &:last-child {  // 最后一项 1. 隐藏 > 箭头 2. 设置最后一项的颜色
+      .bread-crumb-item {
+        color: rgba(0, 0, 0, 0.3);
+        // .content { color: rgba(0, 0, 0, 0.5);} //  color: red;
+        .separator {
+          display: none;
+        }
+      }
+    }
+  }
+}
+  

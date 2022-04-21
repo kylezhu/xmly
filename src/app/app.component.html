@@ -1,0 +1,44 @@
+<div id="xm">
+    <!-- 头部布局 -->
+    <xm-header></xm-header>
+
+    <!-- 面包屑组件 -->
+    <!-- <div class="content"> -->
+    <div class="container">
+        <div class="breadcrumb-wrap">
+            <!-- 在父组件 xm-bread-crumb 上传入模板，然后子组件 xm-bread-crumb-item 获取父组件上的模板 -->
+            <xm-bread-crumb>
+                <!-- 把一个模板 mySeparator 传入到 xm-bread-crumb-item 组件的 html 文件中 -->
+                <xm-bread-crumb-item [xmSeparator]="mySeparator">全部分类</xm-bread-crumb-item>
+                <xm-bread-crumb-item>
+
+                    <div class="sub-category">
+                        <div class="handler">
+                            <!-- currentCategory is returned from AlumbService with param categoryPinyin -->
+                            <!-- currentCategory?.displayName 中加了 ？ 是因为 currentCategory 拿到数据是需要一点点时间的，但是模板上已经使用了
+                            currentCategory, 所以为了防止拿不到值而报错就需要添加 ? -->
+                            <span class="current">{{currentCategory?.displayName}}</span>
+                            <i class="arrow"></i>
+                        </div>
+                        <div class="category-box">
+                            <ul>
+                                <li (click)="changeCategory(item)" [class.checked]="item.id == currentCategory?.id"
+                                    *ngFor="let item of categories;">{{item.displayName}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </xm-bread-crumb-item>
+                <!-- <ng-container *ngFor="let item of subcategory">
+                <xm-breadcrumb-item *ngIf="item">{{ item }}</xm-breadcrumb-item>
+            </ng-container> -->
+                <ng-template #mySeparator>
+                    <b> | </b>
+                </ng-template>
+            </xm-bread-crumb>
+            <br>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <!-- </div> -->
+</div>
+<xm-login></xm-login>

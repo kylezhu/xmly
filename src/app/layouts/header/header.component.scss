@@ -1,0 +1,56 @@
+// :host 的作用是控制 <xm-header></xm-header> 的样式
+// :host {
+//     display: block;
+//   }
+// header {
+//     background-color: #fff;
+//     box-shadow: 0 2px 10px rgba(0,0,0,.1);
+//     .container {
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//       .logo {
+//         display: flex;
+//         align-items: center;
+//         img {
+//           width: 98px;
+//         }
+//         h1 {
+//           color: #f86442;
+//         }
+//       }
+//     }
+//   }
+  
+  
+//   @keyframes moveUpMotion {
+//     from {
+//       transform: translateY(-100%);
+//       opacity: 0;
+//     }
+//     to {
+//       transform: translateY(0);
+//       opacity: 1;
+//     }
+//   }
+
+
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      display: flex;
+      align-items: center;
+      img {
+        width: 100px;
+      }
+      h1 {
+        color: #f86442;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="bread-crumb-item">
+    <!-- <div class="content"> -->
+    <ng-content></ng-content>
+    <!-- </div> -->
+    <!-- 如果模板 xmSeparator 不为空的话就把 xmSeparator 里的内容显示；否者就显示 defSeparatorTpl 模板里面的内容 -->
+    <!-- xmSeparator 是 一个 @Input 类型，所以需要在组件上定义： <xm-bread-crumb-item  [xmSeparator]="mySeparator">全部</xm-bread-crumb-item> -->
+    <ng-container [ngTemplateOutlet]="xmSeparator || defSeparatorTpl">
+
+    </ng-container>
+    <ng-template #defSeparatorTpl>
+        <span class="separator">&gt;</span>
+    </ng-template>
+</div>
